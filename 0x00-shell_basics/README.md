@@ -9,3 +9,4 @@ Script in file 7-movethatfile moves the file betty from tmp directory to my_firs
 Script in file 8-firstdelete deletes the file betty in the my_first_directory directory
 Script in file 9-firstdirdeletion deletes the my_first_directory directory - an empty directory
 Script in file 10-back changes the working directory to the previous one
+Script in file 11-lists lists all files including hidden files in the current directory and the parent directory and the boot directory in long format
