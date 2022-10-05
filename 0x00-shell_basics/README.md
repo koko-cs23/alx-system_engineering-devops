@@ -5,3 +5,4 @@ Script in file 3-listfiles displays current directory contents in a long format.
 Script in file 4-listmorefiles displays current directory contents, including hidden files in long format.
 Script in file 5-listfilesdigitonly displays current directory contents long format with user and group ID displayed numerically including hidden files.
 Script in file 6-firstdirectory creates a directory named my_first_directory in the tmp directory.
+Script in file 7-movethatfile moves the file betty from tmp directory to my_first_directory
