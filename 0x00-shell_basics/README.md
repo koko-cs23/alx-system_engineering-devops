@@ -8,3 +8,4 @@ Script in file 6-firstdirectory creates a directory named my_first_directory in 
 Script in file 7-movethatfile moves the file betty from tmp directory to my_first_directory
 Script in file 8-firstdelete deletes the file betty in the my_first_directory directory
 Script in file 9-firstdirdeletion deletes the my_first_directory directory - an empty directory
+Script in file 10-back changes the working directory to the previous one
