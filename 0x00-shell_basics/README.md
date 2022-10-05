@@ -10,3 +10,4 @@ Script in file 8-firstdelete deletes the file betty in the my_first_directory di
 Script in file 9-firstdirdeletion deletes the my_first_directory directory - an empty directory
 Script in file 10-back changes the working directory to the previous one
 Script in file 11-lists lists all files including hidden files in the current directory and the parent directory and the boot directory in long format
+Script in file 12-file_type prints the type of the file named iamfile - a file that will be in the tmp directory
