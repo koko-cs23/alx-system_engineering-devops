@@ -11,3 +11,4 @@ Script in file 9-firstdirdeletion deletes the my_first_directory directory - an 
 Script in file 10-back changes the working directory to the previous one
 Script in file 11-lists lists all files including hidden files in the current directory and the parent directory and the boot directory in long format
 Script in file 12-file_type prints the type of the file named iamfile - a file that will be in the tmp directory
+Script in file 13-symbolic_link crates a symbolic link to a file ls
