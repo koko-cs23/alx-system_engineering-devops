@@ -13,3 +13,4 @@ Script in file 11-lists lists all files including hidden files in the current di
 Script in file 12-file_type prints the type of the file named iamfile - a file that will be in the tmp directory
 Script in file 13-symbolic_link crates a symbolic link to a file ls
 Script in file 14-copy_html copies all html files from the current working directory to the parent directory
+Script in file 100-lets_move moves all files beginning with an uppercase letter to the directory tmp/u
