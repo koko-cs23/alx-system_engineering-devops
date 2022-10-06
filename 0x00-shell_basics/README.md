@@ -14,3 +14,4 @@ Script in file 12-file_type prints the type of the file named iamfile - a file t
 Script in file 13-symbolic_link crates a symbolic link to a file ls
 Script in file 14-copy_html copies all html files from the current working directory to the parent directory
 Script in file 100-lets_move moves all files beginning with an uppercase letter to the directory tmp/u
+Script in file 101-clean_emacs deletes all files in the current working directory that end with the character ~
