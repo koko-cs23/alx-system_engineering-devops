@@ -17,3 +17,4 @@ Script in file 100-lets_move moves all files beginning with an uppercase letter 
 Script in file 101-clean_emacs deletes all files in the current working directory that end with the character ~
 Script in file 102-tree creates a tree like directory in the current directory
 Script in file 103-commas lists all files and directories of the current directory separated by commas
+Magic file school.mgc can be used to detect School data files
