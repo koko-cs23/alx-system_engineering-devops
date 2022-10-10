@@ -21,3 +21,7 @@ Script in file 19-AZ replaces all characters A and c from input to Z and e respe
 Script in file 20-hiago removes all letters c and C from input
 Script in file 21-reverse reverses its input
 Script in file 22-users_and_homes displays all users and their home directories sorted by users based on the /etc/passwd file
+Script in file 100-empty_casks finds all empty files and directories in the current directory and all sub-directories
+Script in file 101-gifs list all files with a.gif extension in the current directory and all its subdirectories
+Script in file 102-acrostic decodes an acrostic poem
+Script in file 103-the_biggest_fan parses web server logs in TSV format as input and displays the 11 hosts or IP addresses which did the most requests
