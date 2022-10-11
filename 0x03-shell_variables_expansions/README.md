@@ -11,3 +11,8 @@ Script in file 9-divide_and_rule prints the result of the division of the value 
 Script in file 10-love_exponent_breath displays the result of multiplying the value in the environment variable BREATH and the value in environment variable LOVE
 Script in file 11-binary_to_decimal converts a number from base 2 to base 10 where the base 2 number is stored in the environment variable BINARY
 Script in file 12-combinations prints all possible combinations of two letters ecept oo
+Script in file 13-print_float prrints a float via an environment variable NUM
+Script in file 100-decimal_to_hexadecimal converts a base 10 number stored in an environment variable DECIMAL to base 16
+Script in file 101-rot13 encodes and decodes text using the rot13 encryption
+Script in file 102-odd prints every other line from the input
+Script in file 103-water_and_stir adds a number stored in environment variable WATER with a number stored in environment variable STIR and prints the result where WATER is in base water and STIR is in base stir and the result is in base bestchol
