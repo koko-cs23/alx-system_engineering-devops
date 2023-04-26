@@ -3,6 +3,7 @@
 # Install nginx
 sudo apt-get -y update
 sudo apt-get -y install nginx -y
+sudo ufw allow 'Nginx HTTP'
 
 # Start nginx service
 sudo service nginx start
