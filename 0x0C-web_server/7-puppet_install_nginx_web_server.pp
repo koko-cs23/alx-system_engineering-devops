@@ -57,7 +57,7 @@ service { 'nginx':
 }
 # Create index file with "Hello World!" message
 file { '/var/www/html/index.nginx-debian.html':
-  content => 'Hello World!\n',
+  content => 'Hello World!',
 }
 
 # Create redirect_me file with redirect information
