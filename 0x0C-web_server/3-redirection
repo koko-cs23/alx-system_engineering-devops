@@ -7,29 +7,22 @@ sudo apt-get -y install nginx -y
 # Start nginx service
 sudo service nginx start
 
-# Configure nginx to listen on port 80
-sudo sed -i 's/listen\s*80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
-
-# Configure nginx to serve the redirect_me file
-sudo bash -c 'cat > /etc/nginx/sites-available/default << EOF
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    root /var/www/html;
-    index index.html index.htm index.nginx-debian.html;
-
-    server_name _;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-
-    location /redirect_me {
-        return 301 http://www.redirectedpage.com/;
-    }
-}
-EOF'
+# Configure nginx to listen on port 80 and serve the redirect_me file
+sudo sed -i '/listen\s*80;/c\
+listen 80 default_server;\
+\
+root /var/www/html;\
+index index.html index.htm index.nginx-debian.html;\
+\
+server_name _;\
+\
+location / {\
+    try_files \$uri \$uri\/ =404;\
+}\
+\
+location \/redirect_me {\
+    return 301 http:\/\/www.redirectedpage.com\/;\
+}' /etc/nginx/sites-available/default
 
 # Test the nginx configuration for syntax errors
 sudo nginx -t
