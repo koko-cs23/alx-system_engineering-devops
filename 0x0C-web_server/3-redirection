@@ -1,47 +1,30 @@
 #!/usr/bin/env bash
 # Installs, configures, and starts the server
-# Install nginx
-sudo apt-get -y update
-sudo apt-get -y install nginx -y
+apt-get update
+apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
+mkdir -p /var/www/html/
+sudo chmod -R 755 /var/www
+echo 'Hello World!' > /var/www/html/index.html
+SERVER_CONFIG=\
+"server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	server_name _;
+	location / {
+		try_files \$uri \$uri/ =404;
+	}
+	if (\$request_filename ~ redirect_me){
+		rewrite ^ https://sketchfab.com/bluepeno/models permanent;
+	}
+}"
 
-# Start nginx service
-sudo service nginx start
+bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-enabled/default"
 
-# Configure nginx to listen on port 80 and serve the redirect_me file
-sudo sed -i '/listen\s*80;/c\
-listen 80 default_server;\
-\
-root /var/www/html;\
-index index.html index.htm index.nginx-debian.html;\
-\
-server_name _;\
-\
-location / {\
-    try_files \$uri \$uri\/ =404;\
-}\
-\
-location \/redirect_me {\
-    return 301 http:\/\/www.redirectedpage.com\/;\
-}' /etc/nginx/sites-available/default
-
-# Test the nginx configuration for syntax errors
-sudo nginx -t
-
-# Restart nginx service if the configuration is valid
-if [ $? -eq 0 ]
-then
-    sudo service nginx restart
+if [ "$(pgrep -c nginx)" -le 0 ]; then
+	service nginx start
 else
-    echo "Nginx configuration is invalid. Please check the configuration file."
+	service nginx restart
 fi
-
-# Create index file with "Hello World!" message
-echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
-
-# Create redirect_me file with redirect information
-echo -e "HTTP/1.1 301 Moved Permanently\r\nLocation: http://www.redirectedpage.com/\r\n\r\n" | sudo tee /var/www/html/redirect_me > /dev/null
-
-# Restart nginx service
-sudo service nginx restart
-
