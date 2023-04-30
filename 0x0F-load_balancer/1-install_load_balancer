@@ -22,4 +22,3 @@ EOF
 # Restart HAproxy service
 sudo systemctl enable haproxy
 sudo systemctl restart haproxy
-
