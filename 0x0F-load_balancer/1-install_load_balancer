@@ -6,6 +6,8 @@ sudo add-apt-repository -y ppa:vbernat/haproxy
 sudo apt-get update
 sudo apt-get install haproxy -y
 
+echo "ENABLED=1" > /etc/default/haproxy
+
 # Configure HAproxy
 sudo tee /etc/haproxy/haproxy.cfg <<EOF
 frontend http-in
