@@ -10,8 +10,11 @@ sudo tee -a /etc/haproxy/haproxy.cfg << EOF
 frontend http-in
     bind *:80
     mode http
+    option forwardfor header Connection
+    option http-keep-alive      # enable keep-alive connections
+    timeout http-keep-alive 65s # set the keep-alive timeout to 65 seconds
     default_backend servers
-
+        
 backend servers
     mode http
     balance roundrobin
